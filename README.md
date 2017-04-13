@@ -1,6 +1,10 @@
 [v0.1] Proof of concept
 ---
 
+Анализ тональности текстов на основе DIALOGUE EVALUATION 2016,
+Sentiment Analysis, SentiRuEval-2016
+http://www.dialog-21.ru/en/evaluation/2016/sentiment/
+
 ***Что сделано:***
 - Лемматизация и чистка текста
 - RNN с обучающимся словарем
@@ -20,4 +24,4 @@
 - Output.xml привести в подобающий вид
 - Избавиться от хардкода параметров, cmd интерфейс
 
-[результаты](results.txt)
+Результаты запусков: [results.txt](results.txt)
