@@ -10,16 +10,17 @@ from keras.layers.recurrent import GRU, LSTM
 from keras.layers.core import Dense, Dropout
 
 resources = 'resources/'
-bank_train = {'file': resources+'bank_train_2016.xml', 'n': 8}
-bank_json_train = resources+'bank_train.json'
-bank_etalon = {'file': resources+'banks_test_etalon.xml', 'n': 8}
-bank_json_etalon = resources+'bank_etalon.json'
-
-tkk_train = {'file': resources+'tkk_train_2016.xml', 'n': 7}
-tkk_json_train = resources+'tkk_train.json'
-tkk_etalon = {'file': resources+'tkk_test_etalon.xml', 'n': 7}
-tkk_json_etalon = resources+'tkk_etalon.json'
-
+cases = {'bank':
+             {'train': {'file': resources + 'bank_train_2016.xml', 'n': 8},
+              'json_train': resources + 'bank_train.json',
+              'etalon': {'file': resources + 'banks_test_etalon.xml', 'n': 8},
+              'json_etalon': resources + 'bank_etalon.json'},
+         'tkk':
+             {'train': {'file': resources + 'tkk_train_2016.xml', 'n': 7},
+              'json_train': resources + 'tkk_train.json',
+              'etalon': {'file': resources + 'tkk_test_etalon.xml', 'n': 7},
+              'json_etalon': resources + 'tkk_etalon.json'}
+         }
 output = resources+'output.xml'
 
 
@@ -50,13 +51,14 @@ def load_data(json_file):
 
 
 if __name__ == "__main__":
+    case = cases['tkk']
     # run once to create jsons with prepared data
-    # serialize_data(bank_train, bank_json_train)
-    # serialize_data(bank_etalon, bank_json_etalon)
-    # serialize_data(tkk_train, tkk_json_train)
-    # serialize_data(tkk_etalon, tkk_json_etalon)
-    train_twits, train_emotions, train_weight = load_data(tkk_json_train)
-    test_twits, test_emotions, test_weight = load_data(tkk_json_etalon)
+    # serialize_data(case['train'], case['json_train'])
+    # serialize_data(case['train'], case['json_etalon'])
+    # serialize_data(case['train'], case['json_train'])
+    # serialize_data(case['train'], case['json_etalon'])
+    train_twits, train_emotions, train_weight = load_data(case['json_train'])
+    test_twits, test_emotions, test_weight = load_data(case['json_etalon'])
     max_length = max([len(s) for s in train_twits + test_twits])
     vocabulary = utils.make_vocabulary(train_twits+test_twits)
     X_train = sequence.pad_sequences(utils.convert_twits_data(train_twits, vocabulary), maxlen=max_length)
@@ -80,4 +82,4 @@ if __name__ == "__main__":
                 class_weight=train_weight, validation_split=0.0, validation_data=(X_test, y_test))
 
     test_emotions = network.predict_classes(X_test, batch_size=1)
-    utils.emotions_to_xml(tkk_etalon, output, test_emotions)
+    utils.emotions_to_xml(case['etalon'], output, test_emotions)

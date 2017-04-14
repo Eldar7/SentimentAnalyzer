@@ -1,0 +1,11 @@
+tkk: v32
+Epoch 1/1
+8643/8643 [==============================] - 25s - loss: 1.3704 - acc: 0.6345 - val_loss: 0.8544 - val_acc: 0.6293
+2240/2247 [============================>.] - ETA: 0s
+('resources/output.xml', ' saved.')
+
+Counts    -  positive { tp: 87, tn: 1963, fp: 266, fn: 144 } negative { tp: 880, tn: 870, fp: 423, fn: 287 }
+Precision -  { positive: 0.24645892351274787, negative: 0.6753645433614736 }
+Recall    -  { positive: 0.37662337662337664, negative: 0.7540702656383891 }
+F         -  { positive: 0.297945205479452, negative: 0.7125506072874493 }
+F_R       -  0.5052479063834507
