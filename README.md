@@ -25,3 +25,10 @@ http://www.dialog-21.ru/en/evaluation/2016/sentiment/
 - Избавиться от хардкода параметров, cmd интерфейс
 
 Результаты запусков: [results.txt](results.txt)
+
+---
+## Change Log
+
+### Added
+- WHOLE **eval** directory from SentiRueval 2016
+- **eval/run_eval.bat** to simplify evaluation execute 
