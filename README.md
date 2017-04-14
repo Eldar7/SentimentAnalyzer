@@ -30,5 +30,5 @@ http://www.dialog-21.ru/en/evaluation/2016/sentiment/
 ## Change Log
 
 ### Added
-- WHOLE **eval** directory from SentiRueval 2016
+- WHOLE **eval** directory from SentiRueval 2016 - плохая была идея... Надо качать https://drive.google.com/drive/u/0/folders/0BxlA8wH3PTUfTWZxUmFMVlNkVUE и разорхивировать в eval самим с заменой.
 - **eval/run_eval.bat** to simplify evaluation execute 
