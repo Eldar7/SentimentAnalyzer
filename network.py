@@ -9,16 +9,18 @@ from keras.layers.embeddings import Embedding
 from keras.layers.recurrent import GRU, LSTM
 from keras.layers.core import Dense, Dropout
 
+resources = 'resources/'
+bank_train = {'file': resources+'bank_train_2016.xml', 'n': 8}
+bank_json_train = resources+'bank_train.json'
+bank_etalon = {'file': resources+'banks_test_etalon.xml', 'n': 8}
+bank_json_etalon = resources+'bank_etalon.json'
 
-bank_train = {'file': '../bank_train_2016.xml', 'n': 8}
-bank_json_train = 'bank_train.json'
-bank_etalon = {'file': '../banks_test_etalon.xml', 'n': 8}
-bank_json_etalon = 'bank_etalon.json'
+tkk_train = {'file': resources+'tkk_train_2016.xml', 'n': 7}
+tkk_json_train = resources+'tkk_train.json'
+tkk_etalon = {'file': resources+'tkk_test_etalon.xml', 'n': 7}
+tkk_json_etalon = resources+'tkk_etalon.json'
 
-tkk_train = {'file': 'tkk_train_2016.xml', 'n': 7}
-tkk_json_train = 'tkk_train.json'
-tkk_etalon = {'file': 'tkk_test_etalon.xml', 'n': 7}
-tkk_json_etalon = 'tkk_etalon.json'
+output = resources+'output.xml'
 
 
 def make_json(data, filename):
@@ -78,4 +80,4 @@ if __name__ == "__main__":
                 class_weight=train_weight, validation_split=0.0, validation_data=(X_test, y_test))
 
     test_emotions = network.predict_classes(X_test, batch_size=1)
-    utils.emotions_to_xml(tkk_etalon, 'output_LSTM_e3_tkk.xml', test_emotions)
+    utils.emotions_to_xml(tkk_etalon, output, test_emotions)
