@@ -27,8 +27,8 @@ http://www.dialog-21.ru/en/evaluation/2016/sentiment/
 Результаты запусков: [results.txt](results.txt)
 
 ---
-## Change Log
 
 ### Added
-- WHOLE **eval** directory from SentiRueval 2016 - плохая была идея... Надо качать https://drive.google.com/drive/u/0/folders/0BxlA8wH3PTUfTWZxUmFMVlNkVUE и разорхивировать в eval самим с заменой.
-- **eval/run_eval.bat** to simplify evaluation execute 
+- **eval/run_eval.bat** to simplify evaluation execute
+  Для того, чтоб использовать, нужно в eval скопировать содержимое eval 
+  из архива: https://drive.google.com/drive/u/0/folders/0BxlA8wH3PTUfTWZxUmFMVlNkVUE
