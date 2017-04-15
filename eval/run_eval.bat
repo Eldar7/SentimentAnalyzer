@@ -18,10 +18,11 @@ GOTO :end
 
 :main
 IF [%1]==[tkk] (SET jstype=ttk) ELSE (SET jstype=%1)
+IF [%1]==[bank] (SET etalon=banks_test_etalon.xml) ELSE (SET etalon=tkk_test_etalon.xml)
 IF [%2]==[] (SET output=../resources/output.xml) ELSE (SET output=%CURPATH%/%2)
 ECHO ...calculation measure of prediction %1...
 
 cd "%~p0"
-node.exe calc.js %jstype% %output% ../resources/%1_test_etalon.xml
+node.exe calc.js %jstype% %output% ../resources/%etalon%
 cd %CURPATH%
 :end
