@@ -18,7 +18,7 @@ F_R       -  0.45849116283726743
 
 
 tkk:
-
+0) b8 v64
 Train on 8643 samples, validate on 2247 samples
 Epoch 1/3
 8643/8643 [==============================] - 35s - loss: 1.3511 - acc: 0.6373 - val_loss: 0.9226 - val_acc: 0.5710
@@ -34,3 +34,39 @@ Precision -  { positive: 0.2425, negative: 0.7106690777576854 }
 Recall    -  { positive: 0.4199134199134199, negative: 0.6735218508997429 }
 F         -  { positive: 0.3074484944532488, negative: 0.691597008358997 }
 F_R       -  0.4995227514061229
+
+1) b64 v64 e3
+Train on 8643 samples, validate on 2247 samples
+Epoch 1/3
+8643/8643 [==============================] - 9s - loss: 1.5674 - acc: 0.5659 - val_loss: 0.8751 - val_acc: 0.6093
+Epoch 2/3
+8643/8643 [==============================] - 9s - loss: 0.8738 - acc: 0.7957 - val_loss: 0.8565 - val_acc: 0.6480
+Epoch 3/3
+8643/8643 [==============================] - 10s - loss: 0.5312 - acc: 0.8829 - val_loss: 0.8999 - val_acc: 0.6529
+2234/2247 [============================>.] - ETA: 0s('resources/output.xml', ' saved.')
+
+Counts    -  positive { tp: 84, tn: 2009, fp: 220, fn: 147 } negative { tp: 849, tn: 960, fp: 333, fn: 318 }
+Precision -  { positive: 0.27631578947368424, negative: 0.7182741116751269 }
+Recall    -  { positive: 0.36363636363636365, negative: 0.7275064267352185 }
+F         -  { positive: 0.3140186915887851, negative: 0.7228607918263091 }
+F_R       -  0.5184397417075471
+
+2) b64 v64 e5
+Train on 8643 samples, validate on 2247 samples
+Epoch 1/5
+8643/8643 [==============================] - 10s - loss: 1.5640 - acc: 0.5522 - val_loss: 0.8964 - val_acc: 0.6008
+Epoch 2/5
+8643/8643 [==============================] - 10s - loss: 0.8762 - acc: 0.7891 - val_loss: 0.9324 - val_acc: 0.5915
+Epoch 3/5
+8643/8643 [==============================] - 10s - loss: 0.5283 - acc: 0.8826 - val_loss: 0.9907 - val_acc: 0.6288
+Epoch 4/5
+8643/8643 [==============================] - 10s - loss: 0.3555 - acc: 0.9196 - val_loss: 1.0303 - val_acc: 0.6453
+Epoch 5/5
+8643/8643 [==============================] - 11s - loss: 0.2560 - acc: 0.9437 - val_loss: 1.3023 - val_acc: 0.6413
+2228/2247 [============================>.] - ETA: 0s('resources/output.xml', ' saved.')
+
+Counts    -  positive { tp: 92, tn: 1979, fp: 250, fn: 139 } negative { tp: 788, tn: 997, fp: 296, fn: 379 }
+Precision -  { positive: 0.26900584795321636, negative: 0.7269372693726938 }
+Recall    -  { positive: 0.39826839826839827, negative: 0.675235646958012 }
+F         -  { positive: 0.3211169284467714, negative: 0.7001332741003998 }
+F_R       -  0.5106251012735856

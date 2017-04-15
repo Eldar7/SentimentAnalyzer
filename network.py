@@ -78,7 +78,7 @@ if __name__ == "__main__":
     network.add(Dense(units=3, activation="softmax"))
     network.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
-    network.fit(X_train, y_train, verbose=1, batch_size=8, epochs=3,
+    network.fit(X_train, y_train, verbose=1, batch_size=64, epochs=5,
                 class_weight=train_weight, validation_split=0.0, validation_data=(X_test, y_test))
 
     test_emotions = network.predict_classes(X_test, batch_size=1)

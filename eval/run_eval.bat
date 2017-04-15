@@ -23,4 +23,5 @@ ECHO ...calculation measure of prediction %1...
 
 cd "%~p0"
 node.exe calc.js %jstype% %output% ../resources/%1_test_etalon.xml
+cd %CURPATH%
 :end
